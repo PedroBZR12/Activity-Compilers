@@ -1,4 +1,9 @@
 # Activity-Compilers
+### Faculdade e curso:
+- Pontifícia Universidade Católica de São Paulo (PUC-SP) - Ciência da Computação
+### Alunos:
+- Enzo Dante Mícoli
+- Pedro Bizzari
 
 ## Activity 1
 scanner_simples.sh
@@ -100,3 +105,75 @@ Resposta: Na verdade o tokenizer da OpenAI não quebra position em pos + ition c
 
 “Por que o scanner de compilador precisa ser preciso e seguir a gramática, enquanto o da OpenAI não?”
  - O scanner de um compilador precisa ser preciso e seguir rigorosamente a gramática da linguagem porque sua função é validar a estrutura do programa e garantir correção formal antes da execução. Já o tokenizador de um modelo de linguagem não tem papel de validação sintática ou semântica, sendo baseado em critérios estatísticos de frequência e eficiência de representação, o que permite maior tolerância e flexibilidade.
+
+ ## Activity 7
+Tokenizando um livro txt
+Python:
+```py
+import re
+
+def tokenize(texto):
+    token_spec = [
+        ('WORD', r'[A-Za-zÀ-ÖØ-öø-ÿ]+'),
+        ('NUM',  r'\d+'),
+        ('PONT', r'[.,;:!?]'),
+        ('SPACE', r'\s+'),
+    ]
+    regexp = '|'.join(f'(?P<{name}>{pattern})' for name, pattern in token_spec)
+    tokens = []
+    for match in re.finditer(regexp, texto):
+        tipo = match.lastgroup
+        lexema = match.group()
+        if tipo != 'SPACE':
+            tokens.append(lexema)
+    return tokens
+
+# Lendo o arquivo
+with open("livro.txt", "r", encoding="utf-8") as f:
+    texto = f.read()
+
+tokens = tokenize(texto)
+print(tokens[:500])  # mostra só os primeiros 500 tokens
+
+```
+
+JAVA:
+```java
+import java.nio.file.*;
+import java.io.IOException;
+import java.util.*;
+import java.util.regex.*;
+
+public class ScannerPT {
+    public static List<String> tokenize(String texto) {
+        String regexp = "(?<WORD>[A-Za-zÀ-ÖØ-öø-ÿ]+)|(?<NUM>\\d+)|(?<PONT>[.,;:!?])";
+        Pattern pattern = Pattern.compile(regexp);
+        Matcher matcher = pattern.matcher(texto);
+
+        List<String> tokens = new ArrayList<>();
+        while (matcher.find()) {
+            if (matcher.group("WORD") != null) {
+                tokens.add(matcher.group("WORD"));
+            } else if (matcher.group("NUM") != null) {
+                tokens.add(matcher.group("NUM"));
+            } else if (matcher.group("PONT") != null) {
+                tokens.add(matcher.group("PONT"));
+            }
+        }
+        return tokens;
+    }
+
+    public static void main(String[] args) {
+        try {
+            String texto = Files.readString(Paths.get("livro.txt"));
+            List<String> tokens = tokenize(texto);
+            System.out.println(tokens.subList(0, 50)); // mostra primeiros 50 tokens
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+![print do Scanner de livro com python](prints/atv_7_print_1.png)
+![print do Scanner de livro com python](prints/atv_7_print_2.png)

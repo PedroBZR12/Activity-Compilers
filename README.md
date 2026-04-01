@@ -71,3 +71,20 @@ Python:
 Java:
 ![print do código python](prints/atv_4_print_2.png)
 
+## Activity 5
+DFA (Deterministic Finite Automata) para reconhecer números inteiros.
+![print do DFA para reconhecer números inteiros](prints/atv_5_print_1.png)
+
+DFA para identificadores.
+![print do DFA para reconhecer identificadores](prints/atv_5_print_2.png)
+
+NFA (Non-Deterministic Finite Automata) para operador = e == (ambiguidade).
+![print do NFA para reconhecer operadores = e ==](prints/atv_5_print_3.png)
+
+Converter NFA → DFA (ferramenta automática do JFLAP).
+![print do NFA convertido para DFA](prints/atv_5_print_4.png)
+Simular passo a passo com a string do livro.
+![print do DFA processo passo a passo com a string do livro RECONHECENDO =](prints/atv_5_print_5.png)
+![print do DFA processo passo a passo com a string do livro RECONHECENDO ==](prints/atv_5_print_6.png)
+![print do DFA processo passo a passo com a string do livro ERRO](prints/atv_5_print_7.png)
+![print do DFA processo passo a passo com a string do livro ERRO](prints/atv_5_print_8.png)

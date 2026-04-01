@@ -46,3 +46,20 @@ para capturar todos os tokens:
 A regex foi usada para identificar identificadores, números e operadores no código. Cada token corresponde a um padrão definido por expressões regulares. Isso demonstra como o scanner de compiladores reconhece lexemas no fluxo de caracteres.
 
 
+## Activity 3
+no Editor do VsCode, não é possível juntar as duas análises léxicas.
+removendo comentários de código:
+![print do regex funcionando](prints/atv_3_print_1.png)
+![print do regex funcionando](prints/atv_3_print_2.png)
+trocando = por := em códigos:
+![print do regex funcionando](prints/atv_3_print_3.png)
+
+Remover espaços extras
+![print do regex funcionando](prints/atv_3_print_4.png)
+
+converter CSV para TSV podemos substituir as `,` por `\t`
+![print do regex funcionando](prints/atv_3_print_5.png)
+
+CSV de portugûes para inglês trocando `,` para `.` o mesmo pode ser feito com `,` para `;`
+![print do regex funcionando](prints/atv_3_print_6.png)
+

@@ -92,11 +92,11 @@ Simular passo a passo com a string do livro.
 ## Activity 6
 
 Por que o tokenizer da OpenAI quebra position em pos + ition?
-Resposta: Na verdade o tokenizer da OpenAI não quebra position em pos + ition conforme a imagem abaixo.
+ - Resposta: Na verdade o tokenizer da OpenAI não quebra position em pos + ition conforme a imagem abaixo.
 ![print do tokenizer da OpenAI](prints/atv_6_print_1.png)
 
 “Qual é a diferença conceitual entre token léxico (segue gramática regular da linguagem) e token de LLM (BPE – Byte Pair Encoding)?”
- - Tokens léxicos são unidades formais definidas pela gramática da linguagem e reconhecidas por analisadores léxicos com base em expressões regulares, enquanto tokens de modelos de linguagem baseados em BPE são unidades estatísticas aprendidas automaticamente a partir de grandes corpora, sem compromisso com significado sintático ou semântico explícito.
+ - Resposta: Tokens léxicos são unidades formais definidas pela gramática da linguagem e reconhecidas por analisadores léxicos com base em expressões regulares, enquanto tokens de modelos de linguagem baseados em BPE são unidades estatísticas aprendidas automaticamente a partir de grandes corpora, sem compromisso com significado sintático ou semântico explícito.
 
 “Por que o scanner de compilador precisa ser preciso e seguir a gramática, enquanto o da OpenAI não?”
- - O scanner de um compilador precisa ser preciso e seguir rigorosamente a gramática da linguagem porque sua função é validar a estrutura do programa e garantir correção formal antes da execução. Já o tokenizador de um modelo de linguagem não tem papel de validação sintática ou semântica, sendo baseado em critérios estatísticos de frequência e eficiência de representação, o que permite maior tolerância e flexibilidade.
+ - Resposta: O scanner de um compilador precisa ser preciso e seguir rigorosamente a gramática da linguagem porque sua função é validar a estrutura do programa e garantir correção formal antes da execução. Já o tokenizador de um modelo de linguagem não tem papel de validação sintática ou semântica, sendo baseado em critérios estatísticos de frequência e eficiência de representação, o que permite maior tolerância e flexibilidade.

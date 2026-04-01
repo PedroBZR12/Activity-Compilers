@@ -92,6 +92,7 @@ Simular passo a passo com a string do livro.
 ## Activity 6
 
 Por que o tokenizer da OpenAI quebra position em pos + ition?
+ 
  - Resposta: Na verdade o tokenizer da OpenAI não quebra position em pos + ition conforme a imagem abaixo.
 ![print do tokenizer da OpenAI](prints/atv_6_print_1.png)
 

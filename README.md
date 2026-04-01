@@ -63,3 +63,11 @@ converter CSV para TSV podemos substituir as `,` por `\t`
 CSV de portugûes para inglês trocando `,` para `.` o mesmo pode ser feito com `,` para `;`
 ![print do regex funcionando](prints/atv_3_print_6.png)
 
+## Activity 4
+Função que tokeniza texto e retorna lista de tuplas
+Python:
+![print do código python](prints/atv_4_print_1.png)
+
+Java:
+![print do código python](prints/atv_4_print_2.png)
+

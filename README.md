@@ -33,3 +33,16 @@ echo "========================================"
 ![print ao rodar scanner simples part 1](prints/atv_1_print_1.png)
 ![print ao rodar scanner simples part 2](prints/atv_1_print_2.png)
 ![print ao rodar scanner simples part 3](prints/atv_1_print_3.png)
+
+## Activity 2
+utilizando regex para analisar a seguinte linha:
+`position = initial + rate * 60`
+para capturar todos os tokens:
+```re
+/([a-zA-Z_][a-zA-Z0-9_]*)|(\d+)|([=+\-*])|(\s+)/gm
+```
+![print do regex funcionando](prints/atv_2_print.png)
+
+A regex foi usada para identificar identificadores, números e operadores no código. Cada token corresponde a um padrão definido por expressões regulares. Isso demonstra como o scanner de compiladores reconhece lexemas no fluxo de caracteres.
+
+

@@ -176,4 +176,58 @@ public class ScannerPT {
 ```
 
 ![print do Scanner de livro com python](prints/atv_7_print_1.png)
-![print do Scanner de livro com python](prints/atv_7_print_2.png)
+![print do Scanner de livro com java](prints/atv_7_print_2.png)
+
+## Extra
+analisador léxico - scanner - linguagem regular, para quebrar em tokens uma string com um livro literário, conforme as regras da língua portuguesa.
+```py
+import re
+
+# Definições léxicas simples (gramática regular aproximada)
+ARTIGOS = {"o", "a", "os", "as", "um", "uma", "uns", "umas"}
+PRONOMES = {"eu", "tu", "ele", "ela", "nós", "vós", "eles", "elas", "me", "te", "se"}
+PREPOSICOES = {"de", "do", "da", "em", "no", "na", "para", "por", "com"}
+CONJUNCOES = {"e", "ou", "mas", "que", "porque"}
+
+# Verbos comuns (lista mínima, didática)
+VERBOS = {"é", "era", "foi", "ser", "estar", "ter", "fazer", "dizer", "ir", "vir"}
+
+# Regex principal (autômato finito em forma textual)
+TOKEN_REGEX = re.compile(
+    r"""
+    [A-Za-zÀ-ÖØ-öø-ÿ]+ |   # palavras
+    \d+               |   # números
+    [.,;:!?()"'-]         # pontuação
+    """,
+    re.VERBOSE
+)
+
+def classificar_token(token):
+    t = token.lower()
+
+    if t in ARTIGOS:
+        return "artigo"
+    elif t in PRONOMES:
+        return "pronome"
+    elif t in PREPOSICOES:
+        return "preposição"
+    elif t in CONJUNCOES:
+        return "conjunção"
+    elif t in VERBOS:
+        return "verbo"
+    elif re.fullmatch(r"\d+", token):
+        return "número"
+    elif re.fullmatch(r"[.,;:!?()\"'-]", token):
+        return "pontuação"
+    elif re.fullmatch(r"[A-Za-zÀ-ÖØ-öø-ÿ]+", token):
+        return "palavra"
+    else:
+        return "??"
+
+def tokenize(texto):
+    tokens = TOKEN_REGEX.findall(texto)
+    return [(tok, classificar_token(tok)) for tok in tokens]
+
+```
+
+![print do Scanner de texto com regra gramatical com python](prints/atv_extra_1_print_1.png)

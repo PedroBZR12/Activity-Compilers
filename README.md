@@ -2,6 +2,7 @@
 ### Faculdade e curso:
 - Pontifícia Universidade Católica de São Paulo (PUC-SP) - Ciência da Computação
 ### Alunos:
+- Amora Marinho Machado
 - Enzo Dante Mícoli
 - Pedro Bizzari
 
